@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DatiPersonaliController" style="-fx-background: linear-gradient(to bottom, #1a2980, #26d0ce); -fx-padding: 30;">
+
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+    <Text text="AIR FRANCE - DATI PASSEGGERO" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: white;"/>
+    <Text text="Completa i tuoi dati per confermare la prenotazione" style="-fx-font-size: 14px; -fx-fill: rgba(255,255,255,0.9);"/>
+
+    <Separator style="-fx-background-color: white;"/>
+
+    <VBox spacing="20" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 30;">
+
+        <GridPane hgap="20" vgap="15" alignment="CENTER">
+            <Label text="Nome:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtNome" promptText="Inserisci il nome" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="300"/>
+
+            <Label text="Cognome:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtCognome" promptText="Inserisci il cognome" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Data di nascita:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="dateNascita" promptText="GG/MM/AAAA" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"/>
+
+            <Label text="Telefono:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="txtTelefono" promptText="+39 123 456 7890" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            <Label text="Email:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <TextField fx:id="txtEmail" promptText="esempio@email.com" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+            <Label text="Conferma Email:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <TextField fx:id="txtConfermaEmail" promptText="Reinserisci l'email" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+        </GridPane>
+
+        <Separator/>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="✓ CONFERMA PRENOTAZIONE" fx:id="btnConferma" onAction="#confermaPrenotazione" style="-fx-background-color: #26d0ce; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-padding: 12 25; -fx-background-radius: 25;"/>
+            <Button text="✗ ANNULLA" fx:id="btnAnnulla" onAction="#annulla" style="-fx-background-color: #ff4757; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25;"/>
+        </HBox>
+
+        <Label fx:id="lblMessaggio" style="-fx-text-fill: #ff4757; -fx-font-weight: bold;"/>
+    </VBox>
+</VBox>

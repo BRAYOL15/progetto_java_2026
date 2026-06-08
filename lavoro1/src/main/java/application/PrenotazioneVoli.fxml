@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller" style="-fx-background: linear-gradient(to bottom, #1a2980, #26d0ce); -fx-padding: 30;">
+
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+    <Text text="AIR FRANCE PRENOTAZIONI" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: white;"/>
+    <Text text="Prenota il tuo volo in tutta sicurezza" style="-fx-font-size: 16px; -fx-fill: rgba(255,255,255,0.9);"/>
+
+    <Separator style="-fx-background-color: white;"/>
+
+    <VBox spacing="20" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;">
+
+        <GridPane hgap="20" vgap="15" alignment="CENTER">
+            <Label text="Partenza:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="cmbPartenza" promptText="Seleziona città" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="200"/>
+
+            <Label text="Destinazione:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="cmbDestinazione" promptText="Seleziona città" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="200"/>
+
+            <Button text="🔄 Scambia" fx:id="btnScambia" onAction="#scambiaCitta" style="-fx-background-color: #1a2980; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20;" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="2"/>
+        </GridPane>
+
+        <GridPane hgap="20" vgap="15">
+            <Label text="Data andata:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <DatePicker fx:id="dateAndata" prefWidth="180" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+            <Label text="Data ritorno:" style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <DatePicker fx:id="dateRitorno" prefWidth="180" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Passeggeri:" style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="cmbPasseggeri" prefWidth="100" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+            <Label text="Classe:" style="-fx-font-weight: bold;" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="cmbClasse" prefWidth="140" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <Separator/>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="🔍 CERCA VOLI" fx:id="btnCerca" onAction="#cercaVoli" style="-fx-background-color: #26d0ce; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-padding: 12 25; -fx-background-radius: 25;"/>
+            <Button text="📋 VISUALIZZA PRENOTAZIONI" fx:id="btnVisualizza" onAction="#visualizzaPrenotazioni" style="-fx-background-color: #1a2980; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 20; -fx-background-radius: 25;"/>
+            <Button text="🗑️ RESET" fx:id="btnReset" onAction="#resetForm" style="-fx-background-color: #ff4757; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 20; -fx-background-radius: 25;"/>
+        </HBox>
+
+        <VBox spacing="10">
+            <Text text="Voli disponibili:" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <TableView fx:id="tabellaVoli" prefHeight="250">
+                <columns>
+                    <TableColumn text="Compagnia" prefWidth="120"/>
+                    <TableColumn text="Partenza" prefWidth="120"/>
+                    <TableColumn text="Destinazione" prefWidth="120"/>
+                    <TableColumn text="Data" prefWidth="120"/>
+                    <TableColumn text="Orario" prefWidth="100"/>
+                    <TableColumn text="Prezzo" prefWidth="100"/>
+                    <TableColumn text="Classe" prefWidth="100"/>
+                    <TableColumn text="Passeggeri" prefWidth="100"/>
+                </columns>
+            </TableView>
+            <Button text="✈️ PRENOTA SELEZIONATO" fx:id="btnPrenota" onAction="#prenotaVolo" style="-fx-background-color: #26d0ce; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 20;"/>
+        </VBox>
+
+        <VBox spacing="10">
+            <Text text="Le tue prenotazioni:" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <ListView fx:id="listaPrenotazioni" prefHeight="150"/>
+        </VBox>
+
+        <Label fx:id="lblMessaggio" style="-fx-text-fill: #1a2980; -fx-font-weight: bold;"/>
+    </VBox>
+</VBox>
