@@ -22,3 +22,32 @@ Sistema di prenotazione voli sviluppato in **Java** con interfaccia grafica **Ja
 - Maven
 
 ## 📁 Struttura del progetto
+src/main/java/application/
+├── Main.java # Avvio applicazione
+├── Launcher.java # Entry point
+├── Controller.java # Logica principale
+├── Volo.java # Modello Volo
+├── DatiPersonaliController.java # Form dati passeggero
+├── SuccessoController.java # Conferma prenotazione
+├── PrenotazioneVoli.fxml # Schermata principale
+├── DatiPersonali.fxml # Form dati
+└── SuccessoPrenotazione.fxml # Schermata successo
+
+text
+
+## ▶️ Come eseguire
+
+1. Clona il repository
+2. Apri con IntelliJ IDEA
+3. Esegui `Launcher.java` o `Main.java`
+
+## 👨‍💻 Autore
+
+Progetto realizzato come sistema di prenotazione voli professionale.
+
+## 📝 Note
+
+- Validazione completa dei dati inseriti
+- Prezzi dinamici in base a distanza e classe
+- Interfaccia utente intuitiva e moderna
+In sintesi: il codice fa un sistema completo per prenotare voli con ricerca, inserimento dati e conferma, tutto con una bella interfaccia grafica. ✅
