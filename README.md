@@ -1,6 +1,6 @@
 # ✈️ BRADAR - Sistema di Prenotazione Voli
 
-Sistema di prenotazione voli sviluppato in **Java** con interfaccia grafica **JavaFX** e **Scene Builder**. Stile simile al sistema ufficiale Air France.
+Sistema di prenotazione voli sviluppato in **Java** con interfaccia grafica **JavaFX** e **Scene Builder**. Stile simile al sistema ufficiale di una compagnia di viaggio.
 
 ## 🚀 Funzionalità
 
